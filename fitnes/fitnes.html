@@ -1,0 +1,622 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Fitness Mobile App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Header / Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-30">
+   <div class="max-w-4xl mx-auto px-5 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+     <img alt="Fitness app logo, stylized letter F in blue and green colors" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/9a138164-bcc5-483b-f31a-2d97a1078f06.jpg" width="40"/>
+     <h1 class="text-2xl font-bold text-blue-600">
+      FitTrack
+     </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+     <a class="hover:text-blue-600 transition" href="#dashboard">
+      Dashboard
+     </a>
+     <a class="hover:text-blue-600 transition" href="#workouts">
+      Workouts
+     </a>
+     <a class="hover:text-blue-600 transition" href="#nutrition">
+      Nutrition
+     </a>
+     <a class="hover:text-blue-600 transition" href="#progress">
+      Progress
+     </a>
+     <a class="hover:text-blue-600 transition" href="#profile">
+      Profile
+     </a>
+    </nav>
+    <button aria-label="Open menu" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <!-- Mobile menu -->
+   <nav class="hidden md:hidden bg-white shadow-md border-t border-gray-200" id="mobile-menu">
+    <a class="block px-5 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-blue-50" href="#dashboard">
+     Dashboard
+    </a>
+    <a class="block px-5 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-blue-50" href="#workouts">
+     Workouts
+    </a>
+    <a class="block px-5 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-blue-50" href="#nutrition">
+     Nutrition
+    </a>
+    <a class="block px-5 py-3 border-b border-gray-200 text-gray-700 font-semibold hover:bg-blue-50" href="#progress">
+     Progress
+    </a>
+    <a class="block px-5 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="#profile">
+     Profile
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow pt-20 max-w-4xl mx-auto px-5 pb-20">
+   <!-- Dashboard Section -->
+   <section class="mb-12" id="dashboard">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+     Dashboard
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+     <div class="bg-white rounded-lg shadow p-5 flex items-center space-x-4 border-l-8 border-blue-500">
+      <div class="text-blue-500 text-4xl">
+       <i class="fas fa-dumbbell">
+       </i>
+      </div>
+      <div>
+       <p class="text-gray-500 font-semibold">
+        Workouts This Week
+       </p>
+       <p class="text-2xl font-bold text-gray-800">
+        5
+       </p>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow p-5 flex items-center space-x-4 border-l-8 border-green-500">
+      <div class="text-green-500 text-4xl">
+       <i class="fas fa-fire">
+       </i>
+      </div>
+      <div>
+       <p class="text-gray-500 font-semibold">
+        Calories Burned
+       </p>
+       <p class="text-2xl font-bold text-gray-800">
+        3,450 kcal
+       </p>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow p-5 flex items-center space-x-4 border-l-8 border-yellow-500">
+      <div class="text-yellow-500 text-4xl">
+       <i class="fas fa-bed">
+       </i>
+      </div>
+      <div>
+       <p class="text-gray-500 font-semibold">
+        Avg Sleep Hours
+       </p>
+       <p class="text-2xl font-bold text-gray-800">
+        7.2 hrs
+       </p>
+      </div>
+     </div>
+     <div class="bg-white rounded-lg shadow p-5 flex items-center space-x-4 border-l-8 border-red-500">
+      <div class="text-red-500 text-4xl">
+       <i class="fas fa-heartbeat">
+       </i>
+      </div>
+      <div>
+       <p class="text-gray-500 font-semibold">
+        Avg Heart Rate
+       </p>
+       <p class="text-2xl font-bold text-gray-800">
+        72 bpm
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Workouts Section -->
+   <section class="mb-12" id="workouts">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+     Workouts
+    </h2>
+    <div class="space-y-6">
+     <article class="bg-white rounded-lg shadow p-5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img alt="Person performing a full body workout with dumbbells in a bright gym environment" class="w-36 h-36 rounded-lg object-cover flex-shrink-0" height="150" src="https://storage.googleapis.com/a1aa/image/c1b1773d-0cfc-4b7c-144a-505c7cba0139.jpg" width="150"/>
+      <div class="flex-1">
+       <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        Full Body Workout
+       </h3>
+       <p class="text-gray-600 mb-3">
+        A balanced workout targeting all major muscle groups to build
+              strength and endurance.
+       </p>
+       <ul class="text-gray-500 text-sm space-y-1">
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Duration: 45 minutes
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Equipment: Dumbbells, Mat
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Level: Intermediate
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="bg-white rounded-lg shadow p-5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img alt="Athlete doing high intensity interval training sprinting outdoors on a sunny day" class="w-36 h-36 rounded-lg object-cover flex-shrink-0" height="150" src="https://storage.googleapis.com/a1aa/image/0e95c061-50a3-4c68-3c59-d5278e21fed0.jpg" width="150"/>
+      <div class="flex-1">
+       <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        HIIT Workout
+       </h3>
+       <p class="text-gray-600 mb-3">
+        High-intensity interval training to burn fat and improve cardiovascular fitness.
+       </p>
+       <ul class="text-gray-500 text-sm space-y-1">
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Duration: 30 minutes
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Equipment: None
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Level: Advanced
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="bg-white rounded-lg shadow p-5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img alt="Woman practicing yoga in a serene studio with natural light and wooden floors" class="w-36 h-36 rounded-lg object-cover flex-shrink-0" height="150" src="https://storage.googleapis.com/a1aa/image/a4cc1196-0513-457f-6f79-162a03cd6aa0.jpg" width="150"/>
+      <div class="flex-1">
+       <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        Yoga Session
+       </h3>
+       <p class="text-gray-600 mb-3">
+        Relaxing yoga flow to improve flexibility, balance, and mental clarity.
+       </p>
+       <ul class="text-gray-500 text-sm space-y-1">
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Duration: 60 minutes
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Equipment: Yoga Mat
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Level: Beginner
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="bg-white rounded-lg shadow p-5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img alt="Man lifting heavy barbell in a modern gym with focused expression" class="w-36 h-36 rounded-lg object-cover flex-shrink-0" height="150" src="https://storage.googleapis.com/a1aa/image/8f121eaa-81aa-4fcf-f135-cd01477a8144.jpg" width="150"/>
+      <div class="flex-1">
+       <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        Strength Training
+       </h3>
+       <p class="text-gray-600 mb-3">
+        Focused strength training routine to build muscle mass and power.
+       </p>
+       <ul class="text-gray-500 text-sm space-y-1">
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Duration: 50 minutes
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Equipment: Barbell, Dumbbells
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Level: Intermediate
+        </li>
+       </ul>
+      </div>
+     </article>
+     <article class="bg-white rounded-lg shadow p-5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img alt="Runner sprinting on a track during a cardio workout session in early morning" class="w-36 h-36 rounded-lg object-cover flex-shrink-0" height="150" src="https://storage.googleapis.com/a1aa/image/23dd36b2-a0c5-4911-fbda-a7d886ef0465.jpg" width="150"/>
+      <div class="flex-1">
+       <h3 class="text-xl font-semibold text-gray-800 mb-2">
+        Cardio Blast
+       </h3>
+       <p class="text-gray-600 mb-3">
+        Intense cardio session to improve stamina and heart health.
+       </p>
+       <ul class="text-gray-500 text-sm space-y-1">
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Duration: 40 minutes
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Equipment: Treadmill or Outdoor
+        </li>
+        <li>
+         <i class="fas fa-check-circle text-green-500 mr-2">
+         </i>
+         Level: All Levels
+        </li>
+       </ul>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- Nutrition Section -->
+   <section class="mb-12" id="nutrition">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+     Nutrition
+    </h2>
+    <div class="bg-white rounded-lg shadow p-6">
+     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+      <div class="text-center border rounded-lg p-4 shadow-sm">
+       <img alt="Colorful plate with healthy balanced meal representing calories intake" class="mx-auto mb-3" height="80" src="https://storage.googleapis.com/a1aa/image/b92c013a-2b5a-4a8b-c821-cb0a666c5287.jpg" width="80"/>
+       <h3 class="text-lg font-semibold text-gray-800 mb-1">
+        Calories
+       </h3>
+       <p class="text-2xl font-bold text-green-600">
+        2,200 kcal
+       </p>
+      </div>
+      <div class="text-center border rounded-lg p-4 shadow-sm">
+       <img alt="Grilled chicken breast with vegetables representing protein intake" class="mx-auto mb-3" height="80" src="https://storage.googleapis.com/a1aa/image/0995cc02-46da-4db2-815c-71fe20ba5a51.jpg" width="80"/>
+       <h3 class="text-lg font-semibold text-gray-800 mb-1">
+        Protein
+       </h3>
+       <p class="text-2xl font-bold text-green-600">
+        150 g
+       </p>
+      </div>
+      <div class="text-center border rounded-lg p-4 shadow-sm">
+       <img alt="Bowl of brown rice and vegetables representing carbohydrate intake" class="mx-auto mb-3" height="80" src="https://storage.googleapis.com/a1aa/image/4d153041-e144-4069-c670-2f351362d3e0.jpg" width="80"/>
+       <h3 class="text-lg font-semibold text-gray-800 mb-1">
+        Carbs
+       </h3>
+       <p class="text-2xl font-bold text-green-600">
+        250 g
+       </p>
+      </div>
+     </div>
+     <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+      Today's Meals
+     </h3>
+     <ul class="space-y-4">
+      <li class="flex items-center space-x-4 border-b pb-4">
+       <img alt="Healthy breakfast plate with eggs, avocado, and toast on a wooden table" class="w-20 h-20 rounded-lg object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/eade2ed5-f64f-4fe7-a846-e77ff0628ad0.jpg" width="80"/>
+       <div>
+        <p class="font-semibold text-gray-800">
+         Breakfast
+        </p>
+        <p class="text-gray-600 text-sm">
+         Scrambled eggs, avocado toast, and fresh orange juice.
+        </p>
+        <p class="text-green-600 font-bold mt-1">
+         450 kcal
+        </p>
+       </div>
+      </li>
+      <li class="flex items-center space-x-4 border-b pb-4">
+       <img alt="Grilled chicken salad with mixed greens, cherry tomatoes, and nuts in a bowl" class="w-20 h-20 rounded-lg object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/ad471c3f-3be8-4d87-d40a-83256f0ec29f.jpg" width="80"/>
+       <div>
+        <p class="font-semibold text-gray-800">
+         Lunch
+        </p>
+        <p class="text-gray-600 text-sm">
+         Grilled chicken salad with mixed greens and vinaigrette.
+        </p>
+        <p class="text-green-600 font-bold mt-1">
+         650 kcal
+        </p>
+       </div>
+      </li>
+      <li class="flex items-center space-x-4 border-b pb-4">
+       <img alt="Bowl of mixed nuts and fresh fruit slices on a rustic wooden table" class="w-20 h-20 rounded-lg object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/f938abf4-017c-4faa-e9c0-f4ef0aeee367.jpg" width="80"/>
+       <div>
+        <p class="font-semibold text-gray-800">
+         Snack
+        </p>
+        <p class="text-gray-600 text-sm">
+         Mixed nuts and fresh fruit slices.
+        </p>
+        <p class="text-green-600 font-bold mt-1">
+         200 kcal
+        </p>
+       </div>
+      </li>
+      <li class="flex items-center space-x-4">
+       <img alt="Steamed salmon with quinoa and steamed vegetables on a white plate" class="w-20 h-20 rounded-lg object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/87697576-5cb8-4b30-385f-5fd90c633fb8.jpg" width="80"/>
+       <div>
+        <p class="font-semibold text-gray-800">
+         Dinner
+        </p>
+        <p class="text-gray-600 text-sm">
+         Steamed salmon with quinoa and steamed vegetables.
+        </p>
+        <p class="text-green-600 font-bold mt-1">
+         700 kcal
+        </p>
+       </div>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- Progress Section -->
+   <section class="mb-12" id="progress">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+     Progress
+    </h2>
+    <div class="bg-white rounded-lg shadow p-6">
+     <div class="mb-8">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">
+       Weight Progress
+      </h3>
+      <img alt="Line chart showing weight progress over 12 weeks with gradual decrease from 80kg to 72kg" class="w-full rounded-lg" height="300" src="https://storage.googleapis.com/a1aa/image/a77f1993-4854-46f5-965b-2d4475d86201.jpg" width="600"/>
+     </div>
+     <div>
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">
+       Body Measurements
+      </h3>
+      <div class="overflow-x-auto">
+       <table class="w-full text-left border-collapse">
+        <thead>
+         <tr class="bg-blue-50">
+          <th class="py-3 px-4 font-semibold text-gray-700 border border-gray-200">
+           Date
+          </th>
+          <th class="py-3 px-4 font-semibold text-gray-700 border border-gray-200">
+           Weight (kg)
+          </th>
+          <th class="py-3 px-4 font-semibold text-gray-700 border border-gray-200">
+           Chest (cm)
+          </th>
+          <th class="py-3 px-4 font-semibold text-gray-700 border border-gray-200">
+           Waist (cm)
+          </th>
+          <th class="py-3 px-4 font-semibold text-gray-700 border border-gray-200">
+           Hips (cm)
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="even:bg-gray-50">
+          <td class="py-2 px-4 border border-gray-200">
+           2024-06-01
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           80
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           100
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           90
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           95
+          </td>
+         </tr>
+         <tr class="even:bg-gray-50">
+          <td class="py-2 px-4 border border-gray-200">
+           2024-06-08
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           78
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           99
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           88
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           94
+          </td>
+         </tr>
+         <tr class="even:bg-gray-50">
+          <td class="py-2 px-4 border border-gray-200">
+           2024-06-15
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           76
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           98
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           86
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           93
+          </td>
+         </tr>
+         <tr class="even:bg-gray-50">
+          <td class="py-2 px-4 border border-gray-200">
+           2024-06-22
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           74
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           97
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           85
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           92
+          </td>
+         </tr>
+         <tr class="even:bg-gray-50">
+          <td class="py-2 px-4 border border-gray-200">
+           2024-06-29
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           72
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           96
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           83
+          </td>
+          <td class="py-2 px-4 border border-gray-200">
+           91
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Profile Section -->
+   <section class="mb-12" id="profile">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+     Profile
+    </h2>
+    <div class="bg-white rounded-lg shadow p-6 max-w-md mx-auto">
+     <div class="flex flex-col items-center space-y-4 mb-6">
+      <img alt="User avatar, smiling young woman with short hair in fitness attire" class="w-30 h-30 rounded-full object-cover border-4 border-blue-500" height="120" src="https://storage.googleapis.com/a1aa/image/ab45d7c3-b029-4551-7bdd-fdd59c5886bc.jpg" width="120"/>
+      <h3 class="text-2xl font-semibold text-gray-800">
+       Jane Doe
+      </h3>
+      <p class="text-gray-600">
+       Fitness Enthusiast &amp; Nutrition Lover
+      </p>
+     </div>
+     <div class="space-y-4">
+      <div class="flex justify-between border-b border-gray-200 pb-2">
+       <span class="font-semibold text-gray-700">
+        Age
+       </span>
+       <span class="text-gray-600">
+        29 years
+       </span>
+      </div>
+      <div class="flex justify-between border-b border-gray-200 pb-2">
+       <span class="font-semibold text-gray-700">
+        Height
+       </span>
+       <span class="text-gray-600">
+        168 cm
+       </span>
+      </div>
+      <div class="flex justify-between border-b border-gray-200 pb-2">
+       <span class="font-semibold text-gray-700">
+        Weight
+       </span>
+       <span class="text-gray-600">
+        72 kg
+       </span>
+      </div>
+      <div class="flex justify-between border-b border-gray-200 pb-2">
+       <span class="font-semibold text-gray-700">
+        Goal
+       </span>
+       <span class="text-gray-600">
+        Lose Fat &amp; Build Muscle
+       </span>
+      </div>
+      <div class="flex justify-between">
+       <span class="font-semibold text-gray-700">
+        Activity Level
+       </span>
+       <span class="text-gray-600">
+        Moderate (4-5 workouts/week)
+       </span>
+      </div>
+     </div>
+     <button class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition" type="button">
+      Edit Profile
+     </button>
+    </div>
+   </section>
+  </main>
+  <!-- Bottom Navigation for Mobile -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-inner md:hidden">
+   <div class="max-w-4xl mx-auto flex justify-around py-2">
+    <a aria-label="Dashboard" class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" href="#dashboard">
+     <i class="fas fa-tachometer-alt fa-lg mb-1">
+     </i>
+     <span class="text-xs font-semibold">
+      Dashboard
+     </span>
+    </a>
+    <a aria-label="Workouts" class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" href="#workouts">
+     <i class="fas fa-dumbbell fa-lg mb-1">
+     </i>
+     <span class="text-xs font-semibold">
+      Workouts
+     </span>
+    </a>
+    <a aria-label="Nutrition" class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" href="#nutrition">
+     <i class="fas fa-apple-alt fa-lg mb-1">
+     </i>
+     <span class="text-xs font-semibold">
+      Nutrition
+     </span>
+    </a>
+    <a aria-label="Progress" class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" href="#progress">
+     <i class="fas fa-chart-line fa-lg mb-1">
+     </i>
+     <span class="text-xs font-semibold">
+      Progress
+     </span>
+    </a>
+    <a aria-label="Profile" class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" href="#profile">
+     <i class="fas fa-user fa-lg mb-1">
+     </i>
+     <span class="text-xs font-semibold">
+      Profile
+     </span>
+    </a>
+   </div>
+  </nav>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>

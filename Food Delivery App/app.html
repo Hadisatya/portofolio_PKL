@@ -1,0 +1,501 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Food Delivery App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Header / Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <div class="flex items-center space-x-3">
+     <img alt="Food Delivery App logo with stylized fork and spoon icon in red and white" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/f73041df-f0c4-423c-6fc5-e0d409c7c071.jpg" width="40"/>
+     <h1 class="text-2xl font-semibold text-red-600">
+      FoodExpress
+     </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+     <a class="hover:text-red-600 transition" href="#restaurants">
+      Restaurants
+     </a>
+     <a class="hover:text-red-600 transition" href="#orders">
+      My Orders
+     </a>
+     <a class="hover:text-red-600 transition" href="#tracking">
+      Track Order
+     </a>
+     <a class="hover:text-red-600 transition" href="#contact">
+      Contact
+     </a>
+    </nav>
+    <div class="md:hidden">
+     <button aria-label="Toggle menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-600" id="menu-btn">
+      <i class="fas fa-bars fa-lg">
+      </i>
+     </button>
+    </div>
+   </div>
+   <!-- Mobile menu -->
+   <nav class="hidden md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+    <a class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" href="#restaurants">
+     Restaurants
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" href="#orders">
+     My Orders
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" href="#tracking">
+     Track Order
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" href="#contact">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="bg-red-600 text-white">
+   <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
+    <div class="md:w-1/2 space-y-6">
+     <h2 class="text-4xl font-extrabold leading-tight">
+      Delicious Food Delivered
+      <br/>
+      Right To Your Doorstep
+     </h2>
+     <p class="text-lg opacity-90">
+      Order from your favorite restaurants and track your delivery in real-time with FoodExpress.
+     </p>
+     <a class="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition" href="#restaurants">
+      Order Now
+      <i class="fas fa-arrow-right ml-2">
+      </i>
+     </a>
+    </div>
+    <div class="mt-10 md:mt-0 md:w-1/2 flex justify-center">
+     <img alt="Illustration of a delivery person on a scooter carrying a food bag with cityscape background" class="rounded-lg shadow-lg w-full max-w-md" height="300" src="https://storage.googleapis.com/a1aa/image/996408aa-143e-420a-cfc9-e044987af811.jpg" width="400"/>
+    </div>
+   </div>
+  </section>
+  <!-- Restaurants Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16" id="restaurants">
+   <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">
+    Popular Restaurants
+   </h3>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+     <img alt="Cozy Italian restaurant interior with wooden tables, warm lighting, and red checkered tablecloths" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/b64bf9f8-7ac7-4441-222c-93fef6bdf396.jpg" width="400"/>
+     <div class="p-4">
+      <h4 class="text-xl font-semibold text-gray-900">
+       La Bella Italia
+      </h4>
+      <p class="text-gray-600 mt-1">
+       Authentic Italian cuisine with fresh pasta and wood-fired pizzas.
+      </p>
+      <div class="mt-3 flex items-center justify-between text-sm text-yellow-500">
+       <div>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star-half-alt">
+        </i>
+        <span class="text-gray-700 ml-1">
+         (4.5)
+        </span>
+       </div>
+       <span class="text-gray-700 font-semibold">
+        $10 - $30
+       </span>
+      </div>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+     <img alt="Modern sushi bar with chefs preparing sushi behind the counter and ambient lighting" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/b425d54b-8aff-422b-f3fe-696a1d959f38.jpg" width="400"/>
+     <div class="p-4">
+      <h4 class="text-xl font-semibold text-gray-900">
+       Sakura Sushi
+      </h4>
+      <p class="text-gray-600 mt-1">
+       Fresh sushi and sashimi made with premium ingredients.
+      </p>
+      <div class="mt-3 flex items-center justify-between text-sm text-yellow-500">
+       <div>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star-half-alt">
+        </i>
+        <i class="far fa-star">
+        </i>
+        <span class="text-gray-700 ml-1">
+         (3.8)
+        </span>
+       </div>
+       <span class="text-gray-700 font-semibold">
+        $15 - $40
+       </span>
+      </div>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+     <img alt="Bright vegan cafe interior with plants, wooden furniture, and natural light" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/f59f4e3a-9e1d-4c69-78df-7789190fb9c6.jpg" width="400"/>
+     <div class="p-4">
+      <h4 class="text-xl font-semibold text-gray-900">
+       Green Leaf Cafe
+      </h4>
+      <p class="text-gray-600 mt-1">
+       Healthy and delicious vegan meals made from organic ingredients.
+      </p>
+      <div class="mt-3 flex items-center justify-between text-sm text-yellow-500">
+       <div>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="far fa-star">
+        </i>
+        <span class="text-gray-700 ml-1">
+         (4.2)
+        </span>
+       </div>
+       <span class="text-gray-700 font-semibold">
+        $8 - $25
+       </span>
+      </div>
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+     <img alt="Vibrant Mexican street food stall with colorful decorations and tacos on display" class="w-full h-48 object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/9651fe29-3000-49cd-0b4b-7c1f2641730d.jpg" width="400"/>
+     <div class="p-4">
+      <h4 class="text-xl font-semibold text-gray-900">
+       El Taco Loco
+      </h4>
+      <p class="text-gray-600 mt-1">
+       Spicy and flavorful Mexican street food with fresh ingredients.
+      </p>
+      <div class="mt-3 flex items-center justify-between text-sm text-yellow-500">
+       <div>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star-half-alt">
+        </i>
+        <i class="far fa-star">
+        </i>
+        <i class="far fa-star">
+        </i>
+        <span class="text-gray-700 ml-1">
+         (2.7)
+        </span>
+       </div>
+       <span class="text-gray-700 font-semibold">
+        $5 - $15
+       </span>
+      </div>
+     </div>
+    </article>
+   </div>
+  </section>
+  <!-- Featured Dishes Section -->
+  <section class="bg-white py-16">
+   <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">
+     Featured Dishes
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Close-up of a freshly baked Margherita pizza with melted mozzarella, basil leaves, and tomato sauce" class="w-full h-56 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/f7eab2a8-81f8-4c56-1834-df1876c552f9.jpg" width="400"/>
+      <div class="p-4">
+       <h4 class="text-xl font-semibold text-gray-900">
+        Margherita Pizza
+       </h4>
+       <p class="text-gray-600 mt-1">
+        Classic Italian pizza with fresh mozzarella, basil, and tomato sauce.
+       </p>
+       <div class="mt-3 flex items-center justify-between text-red-600 font-bold text-lg">
+        <span>
+         $12.99
+        </span>
+        <button aria-label="Add Margherita Pizza to cart" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition flex items-center">
+         <i class="fas fa-cart-plus mr-2">
+         </i>
+         Add
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Plate of assorted salmon sushi pieces with wasabi and pickled ginger on the side" class="w-full h-56 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/b3f82d1e-fc40-4aed-f41c-aa7178e14ffb.jpg" width="400"/>
+      <div class="p-4">
+       <h4 class="text-xl font-semibold text-gray-900">
+        Salmon Sushi Platter
+       </h4>
+       <p class="text-gray-600 mt-1">
+        Fresh salmon sushi served with wasabi and pickled ginger.
+       </p>
+       <div class="mt-3 flex items-center justify-between text-red-600 font-bold text-lg">
+        <span>
+         $18.50
+        </span>
+        <button aria-label="Add Salmon Sushi Platter to cart" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition flex items-center">
+         <i class="fas fa-cart-plus mr-2">
+         </i>
+         Add
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+      <img alt="Colorful vegan buddha bowl with quinoa, avocado, chickpeas, carrots, and greens in a ceramic bowl" class="w-full h-56 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ec45b9d8-3c62-40bb-21f8-efb701b3de3d.jpg" width="400"/>
+      <div class="p-4">
+       <h4 class="text-xl font-semibold text-gray-900">
+        Vegan Buddha Bowl
+       </h4>
+       <p class="text-gray-600 mt-1">
+        Healthy bowl with quinoa, avocado, chickpeas, and fresh vegetables.
+       </p>
+       <div class="mt-3 flex items-center justify-between text-red-600 font-bold text-lg">
+        <span>
+         $14.75
+        </span>
+        <button aria-label="Add Vegan Buddha Bowl to cart" class="bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition flex items-center">
+         <i class="fas fa-cart-plus mr-2">
+         </i>
+         Add
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Real-time Tracking Section -->
+  <section class="bg-red-50 py-16" id="tracking">
+   <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">
+     Track Your Order
+    </h3>
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+     <form class="flex flex-col sm:flex-row items-center gap-4 mb-8" id="tracking-form">
+      <input aria-label="Order ID input" class="flex-grow border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-600" id="order-id" placeholder="Enter your Order ID" required="" type="text"/>
+      <button aria-label="Track order button" class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition flex items-center justify-center" type="submit">
+       <i class="fas fa-search mr-2">
+       </i>
+       Track
+      </button>
+     </form>
+     <div class="text-center text-gray-700 text-lg font-medium" id="tracking-result">
+     </div>
+     <div class="mt-8 w-full h-64 rounded-lg overflow-hidden hidden" id="tracking-map">
+      <img alt="Map showing delivery route with a scooter icon moving along the path" class="w-full h-full object-cover" height="256" src="https://storage.googleapis.com/a1aa/image/5f7ba481-1420-4f20-8eb9-373b123dbd3d.jpg" width="600"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- My Orders Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16" id="orders">
+   <h3 class="text-3xl font-semibold text-gray-800 mb-8 text-center">
+    My Orders
+   </h3>
+   <div class="space-y-6 max-w-4xl mx-auto">
+    <article class="bg-white rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
+     <img alt="Image of a Margherita pizza with melted cheese and basil leaves" class="w-28 h-20 object-cover rounded-md" height="90" src="https://storage.googleapis.com/a1aa/image/3e9ee9a8-61f2-4a1e-092b-950fcd874615.jpg" width="120"/>
+     <div class="flex-grow">
+      <h4 class="text-lg font-semibold text-gray-900">
+       Order #12345
+      </h4>
+      <p class="text-gray-600">
+       Margherita Pizza x1
+      </p>
+      <p class="text-gray-600">
+       Placed on: 2024-06-01
+      </p>
+      <p class="text-green-600 font-semibold mt-1">
+       Status: Delivered
+      </p>
+     </div>
+     <div class="text-right text-gray-900 font-semibold">
+      $12.99
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
+     <img alt="Image of assorted salmon sushi pieces on a white plate with wasabi and ginger" class="w-28 h-20 object-cover rounded-md" height="90" src="https://storage.googleapis.com/a1aa/image/a15a82e0-bcbe-4ed9-fa50-cad4f622dafe.jpg" width="120"/>
+     <div class="flex-grow">
+      <h4 class="text-lg font-semibold text-gray-900">
+       Order #12346
+      </h4>
+      <p class="text-gray-600">
+       Salmon Sushi Platter x2
+      </p>
+      <p class="text-gray-600">
+       Placed on: 2024-06-03
+      </p>
+      <p class="text-yellow-600 font-semibold mt-1">
+       Status: Out for Delivery
+      </p>
+     </div>
+     <div class="text-right text-gray-900 font-semibold">
+      $37.00
+     </div>
+    </article>
+    <article class="bg-white rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
+     <img alt="Image of a colorful vegan buddha bowl with quinoa, avocado, chickpeas, and fresh vegetables" class="w-28 h-20 object-cover rounded-md" height="90" src="https://storage.googleapis.com/a1aa/image/7d5a5542-54ee-4dad-40ac-79780449e3b6.jpg" width="120"/>
+     <div class="flex-grow">
+      <h4 class="text-lg font-semibold text-gray-900">
+       Order #12347
+      </h4>
+      <p class="text-gray-600">
+       Vegan Buddha Bowl x1
+      </p>
+      <p class="text-gray-600">
+       Placed on: 2024-06-05
+      </p>
+      <p class="text-red-600 font-semibold mt-1">
+       Status: Preparing
+      </p>
+     </div>
+     <div class="text-right text-gray-900 font-semibold">
+      $14.75
+     </div>
+    </article>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="bg-red-600 text-white py-16" id="contact">
+   <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold mb-8 text-center">
+     Contact Us
+    </h3>
+    <div class="max-w-3xl mx-auto space-y-6">
+     <p class="text-center text-lg">
+      Have questions or need help? Reach out to our support team anytime.
+     </p>
+     <div class="flex flex-col sm:flex-row sm:justify-center gap-8 text-center">
+      <div>
+       <i class="fas fa-phone-alt text-2xl mb-2">
+       </i>
+       <p>
+        +1 (555) 123-4567
+       </p>
+      </div>
+      <div>
+       <i class="fas fa-envelope text-2xl mb-2">
+       </i>
+       <p>
+        support@foodexpress.com
+       </p>
+      </div>
+      <div>
+       <i class="fas fa-map-marker-alt text-2xl mb-2">
+       </i>
+       <p>
+        123 Food St, Flavor Town, USA
+       </p>
+      </div>
+     </div>
+     <form aria-label="Contact form" class="mt-8 max-w-xl mx-auto space-y-4">
+      <input class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Your Name" required="" type="text"/>
+      <input class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Your Email" required="" type="email"/>
+      <textarea class="w-full px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Your Message" required="" rows="4"></textarea>
+      <button class="bg-white text-red-600 font-semibold px-6 py-3 rounded-md w-full hover:bg-gray-100 transition" type="submit">
+       Send Message
+      </button>
+     </form>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-auto">
+   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-sm">
+     © 2024 FoodExpress. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Facebook" class="hover:text-white transition" href="#">
+      <i class="fab fa-facebook-f fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-white transition" href="#">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-white transition" href="#">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-white transition" href="#">
+      <i class="fab fa-linkedin-in fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Simple order tracking simulation
+    const trackingForm = document.getElementById('tracking-form');
+    const trackingResult = document.getElementById('tracking-result');
+    const trackingMap = document.getElementById('tracking-map');
+
+    trackingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const orderId = document.getElementById('order-id').value.trim();
+
+      if (!orderId) {
+        trackingResult.textContent = 'Please enter a valid Order ID.';
+        trackingMap.classList.add('hidden');
+        return;
+      }
+
+      // Simulated statuses for demo
+      const statuses = {
+        '12345': 'Delivered',
+        '12346': 'Out for Delivery',
+        '12347': 'Preparing',
+      };
+
+      const status = statuses[orderId.toLowerCase()] || null;
+
+      if (status) {
+        trackingResult.textContent = `Order ${orderId} is currently: ${status}.`;
+        if (status === 'Out for Delivery') {
+          trackingMap.classList.remove('hidden');
+        } else {
+          trackingMap.classList.add('hidden');
+        }
+      } else {
+        trackingResult.textContent = `No tracking information found for Order ID: ${orderId}.`;
+        trackingMap.classList.add('hidden');
+      }
+    });
+  </script>
+ </body>
+</html>
