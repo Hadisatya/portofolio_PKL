@@ -1,0 +1,61 @@
+<html class="h-full bg-gray-900" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Prank Error
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto Mono', monospace;
+    }
+  </style>
+ </head>
+ <body class="h-full flex flex-col justify-center items-center text-white px-4">
+  <div class="max-w-xl w-full text-center space-y-6">
+   <img alt="Red error icon with white text ERROR in bold monospace font" class="mx-auto" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ff4a6ec9-53e4-4a7f-f9c1-9009889e4b4e.jpg" width="150"/>
+   <h1 class="text-5xl font-extrabold tracking-wide">
+    ERROR 0xDEADBEEF
+   </h1>
+   <p class="text-lg text-red-400 font-semibold">
+    Sistem mengalami kesalahan kritis. Silakan jangan panik.
+   </p>
+   <div class="bg-red-800 bg-opacity-80 rounded-lg p-6 text-left font-mono text-sm leading-relaxed overflow-auto max-h-48 shadow-lg">
+    <p>
+     *** SYSTEM ERROR LOG ***
+    </p>
+    <p>
+     [00:01:23] Kernel panic detected at memory address 0xDEADBEEF
+    </p>
+    <p>
+     [00:01:24] Attempting to recover system files...
+    </p>
+    <p>
+     [00:01:25] Recovery failed: file system corrupted
+    </p>
+    <p>
+     [00:01:26] Initiating emergency shutdown sequence
+    </p>
+    <p>
+     [00:01:27] ERROR: Unable to complete shutdown
+    </p>
+    <p>
+     [00:01:28] System halted. Please contact your administrator.
+    </p>
+   </div>
+   <button aria-label="Restart system button" class="mt-6 bg-red-600 hover:bg-red-700 active:bg-red-800 transition-colors rounded-md px-6 py-3 font-bold text-white shadow-lg focus:outline-none focus:ring-4 focus:ring-red-500" id="btnRestart">
+    Restart System
+   </button>
+  </div>
+  <script>
+   const btn = document.getElementById('btnRestart');
+    btn.addEventListener('click', () => {
+      alert('Restart gagal! Sistem tetap error. Silakan coba lagi nanti.');
+    });
+  </script>
+ </body>
+</html>
